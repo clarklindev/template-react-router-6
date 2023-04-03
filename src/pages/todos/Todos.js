@@ -8,7 +8,7 @@ export const Todos = () => {
     <div className='todos'>
       <h2>Todos</h2>
       {todos.map((todo) => (
-        <Link to='/' key={todo.id}>
+        <Link to={todo.id.toString()} key={todo.id}>
           <p>{todo.title}</p>
         </Link>
       ))}

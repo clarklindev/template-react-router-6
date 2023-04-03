@@ -16,7 +16,8 @@ import { TodosLayout } from './layouts/TodosLayout';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { NotFound } from './pages/NotFound';
-import { Todos, todosLoader } from './pages/Todos';
+import { Todos, todosLoader } from './pages/todos/Todos';
+import { TodoDetails, todoDetailsLoader } from './pages/todos/TodoDetails';
 import { Faq } from './pages/help/Faq';
 import { Contact } from './pages/help/Contact';
 
@@ -34,6 +35,11 @@ export const router = createBrowserRouter(
 
       <Route path='todos' element={<TodosLayout />}>
         <Route index element={<Todos />} loader={todosLoader} />
+        <Route
+          path=':id'
+          element={<TodoDetails />}
+          loader={todoDetailsLoader}
+        />
       </Route>
 
       <Route path='*' element={<NotFound />} />
