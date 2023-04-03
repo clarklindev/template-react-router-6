@@ -9,6 +9,7 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -16,8 +17,8 @@ module.exports = {
       filename: 'index.html',
     }),
   ],
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -27,7 +28,7 @@ module.exports = {
         loader: 'babel-loader',
         options: { presets: ['@babel/preset-env', '@babel/preset-react'] },
       },
-    ]
+    ],
   },
   output: {
     filename: '[name].bundle.js',
