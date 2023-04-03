@@ -16,6 +16,19 @@ module.exports = {
       filename: 'index.html',
     }),
   ],
+  module:{
+    rules:[
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          fullySpecified: false,
+        },
+        loader: 'babel-loader',
+        options: { presets: ['@babel/preset-env', '@babel/preset-react'] },
+      },
+    ]
+  },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),

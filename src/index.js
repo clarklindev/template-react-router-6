@@ -1,10 +1,9 @@
-function component() {
-  const element = document.createElement('div');
+import React from 'react';
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = ['Hello', 'webpack'].join(' ');
+import { createRoot } from 'react-dom/client';
+// Clear the existing HTML content
+document.body.innerHTML = '<div id="app"></div>';
 
-  return element;
-}
-
-document.body.appendChild(component());
+// Render your React component instead
+const root = createRoot(document.getElementById('app'));
+root.render(<h1>Hello, world</h1>);
