@@ -24,3 +24,22 @@ nav a.active{
   color: white;
   background: var(--primary);
 }
+
+.breadcrumbs > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.breadcrumbs .crumb:after{
+  content: '>';
+  margin-left: 10px;
+  color: gray;
+}
+
+.breadcrumbs .crumb:last-child:after{
+  display: none;
+}
+
+.breadcrumbs .crumb a{
+  color: gray;
+}
