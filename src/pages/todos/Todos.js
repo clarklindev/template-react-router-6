@@ -20,5 +20,9 @@ export const todosLoader = async () => {
   console.log('todosLoader');
   const res = await fetch('http://localhost:4000/todos');
 
+  if (!res.ok) {
+    throw Error('Could not fetch the data');
+  }
+
   return res.json();
 };
